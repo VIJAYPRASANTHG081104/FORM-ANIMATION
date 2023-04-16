@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+}
+::selection{
+    background-color: crimson;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: #fff;
+}
+.header{
+    position:fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 25px 13px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+.navabar{
+    margin-top: 10px;
+}
+.navabar a{
+
+    position: relative;
+    font-size: 16px;
+    color: white;
+    margin-right: 30px;
+    text-decoration: none;
+}
+/* downline in navbar */
+.navabar a::after{
+    content: " ";/* none content for line */
+    position: absolute;
+    right: 0%;/* rigth or left is zero for the line to come down the links */
+    width: 100%;/* width is 100 because to cover */
+    background-color: #fff;
+    height: 2px;/* thickness */
+    bottom: -1px;/* to make the line to come down the links */
+    border-radius: 5px;/* smooth radius */
+    transform: translateY(10px);/* translate Y is in Y axis 10px down frome the word */
+    opacity: 0;/* to hide the line */
+    transition: .5s ease;
+}
+.navabar a:hover:after{
+    transform: translateY(10px);
+    opacity: 1;
+}
+.search{
+    width: 250px;
+    height: 45px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+.search input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    padding-left: 15px;
+}
+.search button{
+    width: 38px;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.search ::placeholder{
+    color: #fff;
+}
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 550px;
+    width: 75%;
+    transform: translate(-50%,-50%);/* used to move an item horezontal and verical*/
+    margin-top: 30px;
+    /* background-image: url("https://cdn.wallpapersafari.com/23/42/Kdk9ws.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    background-color: transparent;
+    border-radius: 20px;
+    color: #fff;
+}
+.item{
+    position: absolute;
+    width: 58%;
+    height: 100%;
+    color: #fff;
+    background-color: transparent;
+    display: flex; /* to arrange it in order*/
+    flex-direction: column; /* to change direction of flex*/
+    justify-content: space-between;
+    padding: 80px;/* to increase the overall space*/
+}
+.item .logo{
+    color: #fff;
+    font-size: 33px;
+}
+.item-text h2{
+    font-size: 40px;
+    line-height: 1;
+}
+.item-text p{
+    font-size: 16px;
+    margin: 20px 0px;
+}
+.socialicon a i{
+    color: #fff;
+    font-size: 24px;
+    margin-left: 10px;
+    transition: .5s ease; /* important of smooth respose*/
+
+}
+.socialicon a:hover i{
+    transform: scale(1.2);/* we can use scale also the only differance b/w this to is transfom scale will do it's work with animation while scale will not?????importan?????? to this deign based on the ux and ui disgin*/
+}
+.container .login-section{
+    position: absolute;
+    top: 0;
+    right: 0%;
+    width: calc(100% - 58%);
+    height: 100%;
+}
+.login-section .form-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.login-section .form-box h2{
+    text-align: center;
+    font-size: 25px;
+
+}
+.form-box .input-box{
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin: 30px 0;
+    position: relative;
+}
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-right:28px ;
+
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);/* USED TO MOVE SOMETHING UP -50% up in y axis */
+    font-size: 16px;
+    font-weight: 600px;
+    pointer-events: none;
+    transition: .5s ease;
+} 
+.input-box .icon{
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+}
+.input-box input:focus~ label,/* :focus is used to do some this we I touch the particular thing !!!!*/
+.input-box input:valid~ label{  /* valid is used to valid some this mostly used in forms THE CSS WILL DISAPPER WHEN WE DO WRONG !! IT IS USED HE TO STAY THE EMAIL UP IF IT IS CORRECT IT WILL COME DOWN WILL IT IS WRONG!!!! */
+    top: -5px;
+}
+.remember-password{
+    font-size: 14px;
+    font-weight: 500;
+    margin: -15px 0 15px;/* top right and left*/
+    display: flex;
+    justify-content: space-between;
+}
+.remember-password label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+.remember-password a{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.remember-password a:hover{
+    text-decoration: underline;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: crimson;
+    cursor: pointer;
+    font-size: 17px;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0,0.4);
+    transition: .5 ease;
+}
+.btn:hover{
+    /* color: crimson;
+    background-color: transparent; */
+    transform: scale(1.05);
+}
+/* .btn:active{
+    background-color: transparent;
+
+} */
+.create-account{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 25px;
+
+}
+.create-account p a{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+
+}
+.create-account p a:hover{
+    text-decoration: underline;
+}
